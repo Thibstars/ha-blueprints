@@ -1,0 +1,16 @@
+blueprint:
+  name: Trigger IFTTT Webhook
+  description: Trigger a IFTTT webhook.
+  domain: automation
+  input:
+    event_name:
+      name: IFTTT event name
+      description: This value must match the event name as configured in the IFTTT applet.
+  
+trigger: []
+    
+action:
+  - alias: Trigger IFTTT
+    service: ifttt.trigger
+    data:
+      event: !input event_name
